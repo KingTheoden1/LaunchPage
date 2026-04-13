@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ═══════════════════════════════════════════════
+       CHARACTER ENCODING & VIEWPORT
+  ═══════════════════════════════════════════════ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══════════════════════════════════════════════
+       PRIMARY SEO META TAGS
+  ═══════════════════════════════════════════════ -->
+  <title>FormFlow — Accessible Embeddable Forms with Stripe Payments</title>
+  <meta name="description" content="FormFlow lets you embed accessible, high-converting forms anywhere in minutes. Built-in Stripe payments, WCAG-compliant, zero code required. Start free." />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://formflow.app/" />
+
+  <!-- ═══════════════════════════════════════════════
+       OPEN GRAPH (Facebook, LinkedIn, Slack unfurls)
+  ═══════════════════════════════════════════════ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FormFlow" />
+  <meta property="og:title" content="FormFlow — Accessible Embeddable Forms with Stripe Payments" />
+  <meta property="og:description" content="Embed accessible, high-converting forms anywhere in minutes. Built-in Stripe payments, WCAG-compliant, zero code required." />
+  <meta property="og:url" content="https://formflow.app/" />
+  <meta property="og:image" content="https://formflow.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="FormFlow dashboard showing an embedded payment form" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- ═══════════════════════════════════════════════
+       TWITTER CARD
+  ═══════════════════════════════════════════════ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@formflowapp" />
+  <meta name="twitter:creator" content="@formflowapp" />
+  <meta name="twitter:title" content="FormFlow — Accessible Embeddable Forms with Stripe Payments" />
+  <meta name="twitter:description" content="Embed accessible, high-converting forms anywhere in minutes. Built-in Stripe payments, WCAG-compliant, zero code required." />
+  <meta name="twitter:image" content="https://formflow.app/og-image.png" />
+  <meta name="twitter:image:alt" content="FormFlow dashboard showing an embedded payment form" />
+
+  <!-- ═══════════════════════════════════════════════
+       ADDITIONAL META
+  ═══════════════════════════════════════════════ -->
+  <meta name="author" content="FormFlow" />
+  <meta name="theme-color" content="#4F46E5" />
+  <meta name="application-name" content="FormFlow" />
+  <meta name="generator" content="" />
+
+  <!-- ═══════════════════════════════════════════════
+       FAVICON (inline SVG data URI — no extra request)
+  ═══════════════════════════════════════════════ -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234F46E5'/><path d='M8 10h16M8 16h10M8 22h13' stroke='white' stroke-width='2.5' stroke-linecap='round'/></svg>" />
+
+  <!-- ═══════════════════════════════════════════════
+       FONT PRELOAD — Inter from Google Fonts
+       Preconnect reduces DNS + TLS handshake latency.
+       Preload the most-used weight (400 + 600) to
+       eliminate FOIT on above-the-fold text.
+  ═══════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+
+  <!-- ═══════════════════════════════════════════════
+       TAILWIND CSS via CDN (no build step)
+       defer — non-render-blocking
+  ═══════════════════════════════════════════════ -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- ═══════════════════════════════════════════════
+       JSON-LD STRUCTURED DATA
+       Two schemas:
+         1. WebSite — enables sitelinks search box in Google
+         2. SoftwareApplication — enables rich results
+            (star ratings, price, OS) in SERPs
+  ═══════════════════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://formflow.app/#website",
+        "url": "https://formflow.app/",
+        "name": "FormFlow",
+        "description": "Accessible embeddable form builder with Stripe payments",
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://formflow.app/#organization",
+          "name": "FormFlow",
+          "url": "https://formflow.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://formflow.app/logo.png",
+            "width": 200,
+            "height": 60
+          },
+          "sameAs": [
+            "https://twitter.com/formflowapp",
+            "https://github.com/formflowapp"
+          ]
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://formflow.app/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://formflow.app/#software",
+        "name": "FormFlow",
+        "url": "https://formflow.app/",
+        "description": "Accessible embeddable form builder with Stripe payments. WCAG 2.1 AA compliant, zero-code setup.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Free",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Up to 3 forms, 100 submissions/month"
+          },
+          {
+            "@type": "Offer",
+            "name": "Pro",
+            "price": "29",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "billingIncrement": 1,
+              "unitCode": "MON"
+            },
+            "description": "Unlimited forms, Stripe payments, priority support"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "214",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "featureList": [
+          "Accessible WCAG 2.1 AA forms",
+          "Embedded Stripe payments",
+          "Zero-code embed snippet",
+          "Custom branding",
+          "Submission analytics",
+          "Email notifications"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══════════════════════════════════════════════
+       ABOVE-THE-FOLD CRITICAL CSS (inlined)
+       Prevents render-blocking — browser paints hero
+       before external stylesheets resolve.
+       Covers: body font, skip link, nav, hero text,
+       and focus-ring baseline.
+  ═══════════════════════════════════════════════ -->
+  <style>
+    /* ── Base ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      background-color: #ffffff;
+      color: #111827;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Skip-to-content link (WCAG 2.4.1) ───── */
+    .skip-link {
+      position: absolute;
+      top: -9999px;
+      left: 1rem;
+      z-index: 9999;
+      padding: 0.75rem 1.25rem;
+      background: #4F46E5;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9375rem;
+      border-radius: 0 0 0.5rem 0.5rem;
+      text-decoration: none;
+      outline: none;
+    }
+    .skip-link:focus {
+      top: 0;
+      outline: 3px solid #fbbf24;
+      outline-offset: 2px;
+    }
+
+    /* ── Global visible focus ring (WCAG 2.4.7) ─ */
+    :focus-visible {
+      outline: 3px solid #4F46E5;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+    /* Remove default outline only when :focus-visible is supported */
+    :focus:not(:focus-visible) { outline: none; }
+
+    /* ── Reduced motion (WCAG 2.3.3) ─────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* ── Prevent layout shift for hero image ─── */
+    .hero-mockup {
+      aspect-ratio: 16 / 10;
+      width: 100%;
+      background: #EEF2FF;
+      border-radius: 0.75rem;
+    }
+
+    /* ── Pricing card equal height ────────────── */
+    .pricing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: stretch;
+    }
+    .pricing-card {
+      display: flex;
+      flex-direction: column;
+    }
+    .pricing-card .card-cta {
+      margin-top: auto;
+    }
+
+    /* ── FAQ accordion animation ──────────────── */
+    details > summary { cursor: pointer; list-style: none; }
+    details > summary::-webkit-details-marker { display: none; }
+    details > summary::marker { display: none; }
+
+    details[open] .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron {
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .faq-chevron { transition: none; }
+    }
+
+    /* ── Testimonial card min-height prevents reflow */
+    .testimonial-card { min-height: 220px; }
+
+    /* ── Accessible button base ───────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: inherit;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid transparent;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.15s ease, color 0.15s ease,
+                  border-color 0.15s ease, box-shadow 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn:focus-visible {
+      outline: 3px solid #4F46E5;
+      outline-offset: 3px;
+    }
+    .btn-primary {
+      background-color: #4F46E5;
+      color: #ffffff;
+      padding: 0.75rem 1.75rem;
+      font-size: 1rem;
+    }
+    .btn-primary:hover { background-color: #4338CA; }
+    .btn-primary:active { background-color: #3730A3; }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: #4F46E5;
+      border-color: #4F46E5;
+      padding: 0.75rem 1.75rem;
+      font-size: 1rem;
+    }
+    .btn-secondary:hover { background-color: #EEF2FF; }
+
+    .btn-outline-white {
+      background-color: transparent;
+      color: #ffffff;
+      border-color: rgba(255,255,255,0.6);
+      padding: 0.75rem 1.75rem;
+      font-size: 1rem;
+    }
+    .btn-outline-white:hover { background-color: rgba(255,255,255,0.1); border-color: #ffffff; }
+
+    /* ── Nav link underline on hover/focus ───── */
+    .nav-link {
+      position: relative;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+      font-size: 0.9375rem;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #4F46E5;
+      transition: width 0.2s ease;
+    }
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after { width: 100%; }
+
+    /* ── Section spacing ─────────────────────── */
+    .section-pad { padding: 5rem 1.5rem; }
+    @media (min-width: 768px) { .section-pad { padding: 6rem 2rem; } }
+
+    /* ── Container ────────────────────────────── */
+    .container { max-width: 1120px; margin: 0 auto; }
+
+    /* ── Nav sticky + shadow on scroll ──────── */
+    #site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    #site-header.scrolled {
+      border-bottom-color: #E5E7EB;
+      box-shadow: 0 1px 12px rgba(0,0,0,0.07);
+    }
+
+    /* ── Responsive nav show/hide ─────────── */
+    @media (max-width: 767px) {
+      .nav-desktop { display: none !important; }
+      .nav-mobile  { display: block !important; }
+    }
+    @media (min-width: 768px) {
+      .nav-mobile  { display: none !important; }
+    }
+
+    /* ── Visually hidden (screen-reader only) ── */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       SKIP-TO-CONTENT LINK
+       WCAG 2.4.1 — Bypass Blocks (Level A)
+       Must be the very first focusable element.
+  ═══════════════════════════════════════════════ -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════════════════════════
+       ARIA LANDMARK: banner (site header/nav)
+  ═══════════════════════════════════════════════ -->
+  <header id="site-header" role="banner" aria-label="Site header">
+
+    <!-- ═══════════════════════════════════════════════
+         PRIMARY NAVIGATION
+         WCAG: nav landmark, aria-label distinguishes it
+         from any future secondary navs.
+         Mobile: hamburger toggles aria-expanded + hidden menu.
+    ═══════════════════════════════════════════════ -->
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding-top:1.25rem;padding-bottom:1.25rem;">
+
+        <!-- Logo — aria-label gives screen readers the brand name -->
+        <a href="/" aria-label="FormFlow home" style="display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;">
+          <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <rect width="32" height="32" rx="8" fill="#4F46E5"/>
+            <path d="M8 10h16M8 16h10M8 22h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span style="font-size:1.25rem;font-weight:800;color:#111827;letter-spacing:-0.02em;">FormFlow</span>
+        </a>
+
+        <!-- Desktop nav links (hidden on mobile) -->
+        <ul id="nav-menu" role="list" style="display:flex;align-items:center;gap:2rem;list-style:none;margin:0;padding:0;" class="nav-desktop">
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+
+        <!-- Desktop CTAs -->
+        <div class="nav-desktop" style="display:flex;align-items:center;gap:1rem;">
+          <a href="#" class="nav-link" style="font-size:0.9375rem;">Log in</a>
+          <a href="#pricing" class="btn btn-primary" style="padding:0.625rem 1.25rem;font-size:0.9375rem;">
+            Start free
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Mobile hamburger button -->
+        <button
+          id="nav-toggle"
+          class="nav-mobile"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Open navigation menu"
+          style="display:none;background:none;border:none;padding:0.5rem;cursor:pointer;color:#111827;"
+        >
+          <!-- Hamburger icon — swaps to X via JS -->
+          <svg id="icon-menu" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg id="icon-close" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" style="display:none;">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+      </div>
+
+      <!-- Mobile menu (hidden until toggle) -->
+      <div
+        id="mobile-menu"
+        role="dialog"
+        aria-label="Mobile navigation"
+        aria-modal="false"
+        hidden
+        style="background:#fff;border-top:1px solid #E5E7EB;padding:1.5rem;"
+      >
+        <ul role="list" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1rem;">
+          <li><a href="#features" class="nav-link" style="font-size:1.0625rem;" onclick="closeMobileMenu()">Features</a></li>
+          <li><a href="#pricing" class="nav-link" style="font-size:1.0625rem;" onclick="closeMobileMenu()">Pricing</a></li>
+          <li><a href="#testimonials" class="nav-link" style="font-size:1.0625rem;" onclick="closeMobileMenu()">Testimonials</a></li>
+          <li><a href="#faq" class="nav-link" style="font-size:1.0625rem;" onclick="closeMobileMenu()">FAQ</a></li>
+          <li style="padding-top:0.5rem;border-top:1px solid #E5E7EB;">
+            <a href="#" class="nav-link" style="font-size:1.0625rem;" onclick="closeMobileMenu()">Log in</a>
+          </li>
+          <li>
+            <a href="#pricing" class="btn btn-primary" style="width:100%;justify-content:center;" onclick="closeMobileMenu()">Start free</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       ARIA LANDMARK: main
+  ═══════════════════════════════════════════════ -->
+  <main id="main-content" role="main" tabindex="-1" aria-label="Main content">
+
+    <!-- ═══════════════════════════════════════════════
+         HERO SECTION
+         SEO: sole <h1> on the page — keyword-rich,
+              matches title tag intent.
+         WCAG: aria-labelledby points to h1;
+               decorative SVG shapes are aria-hidden;
+               mockup image has descriptive alt text;
+               both CTAs have visible labels.
+    ═══════════════════════════════════════════════ -->
+    <section id="hero" aria-labelledby="hero-heading" style="background:linear-gradient(160deg,#EEF2FF 0%,#ffffff 60%);overflow:hidden;position:relative;">
+
+      <!-- Decorative background blobs — aria-hidden, no meaning conveyed -->
+      <div aria-hidden="true" style="position:absolute;top:-120px;right:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,#C7D2FE 0%,transparent 70%);pointer-events:none;"></div>
+      <div aria-hidden="true" style="position:absolute;bottom:-80px;left:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,#DDD6FE 0%,transparent 70%);pointer-events:none;"></div>
+
+      <div class="container section-pad" style="position:relative;z-index:1;">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:3rem;">
+
+          <!-- ── Left: copy ──────────────────────── -->
+          <div style="flex:1;min-width:280px;max-width:560px;">
+
+            <!-- Trust badge -->
+            <div style="display:inline-flex;align-items:center;gap:0.5rem;background:#EEF2FF;border:1px solid #C7D2FE;border-radius:9999px;padding:0.375rem 0.875rem;margin-bottom:1.5rem;">
+              <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false" fill="none">
+                <circle cx="7" cy="7" r="6.25" stroke="#4F46E5" stroke-width="1.5"/>
+                <path d="M4.5 7l1.75 1.75L9.5 5.5" stroke="#4F46E5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span style="font-size:0.8125rem;font-weight:600;color:#4338CA;">WCAG 2.1 AA Certified</span>
+            </div>
+
+            <!-- h1 — sole heading level 1, keyword-targeted -->
+            <h1 id="hero-heading" style="font-size:clamp(2rem,5vw,3.25rem);font-weight:800;line-height:1.15;letter-spacing:-0.03em;color:#111827;margin-bottom:1.25rem;">
+              Embeddable Forms<br>
+              <span style="color:#4F46E5;">with Built-in Payments</span>
+            </h1>
+
+            <p style="font-size:clamp(1rem,2vw,1.1875rem);color:#4B5563;line-height:1.7;margin-bottom:2rem;max-width:480px;">
+              FormFlow lets you drop accessible, high-converting forms into any site in minutes — with Stripe payments, custom branding, and zero code required.
+            </p>
+
+            <!-- CTA group -->
+            <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;" role="group" aria-label="Get started options">
+              <a href="#pricing" class="btn btn-primary" style="font-size:1.0625rem;padding:0.875rem 2rem;">
+                Start for free
+                <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false" fill="none">
+                  <path d="M3.75 9h10.5M10.5 5.25L14.25 9l-3.75 3.75" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <a href="#features" class="btn btn-secondary" style="font-size:1.0625rem;padding:0.875rem 2rem;">
+                See how it works
+              </a>
+            </div>
+
+            <!-- Social proof micro-stat row -->
+            <div style="display:flex;flex-wrap:wrap;gap:2rem;margin-top:2.5rem;" aria-label="Key statistics">
+              <div>
+                <p style="font-size:1.5rem;font-weight:800;color:#111827;line-height:1;">2,400+</p>
+                <p style="font-size:0.8125rem;color:#6B7280;margin-top:0.25rem;">Teams using FormFlow</p>
+              </div>
+              <div style="width:1px;background:#E5E7EB;" aria-hidden="true"></div>
+              <div>
+                <p style="font-size:1.5rem;font-weight:800;color:#111827;line-height:1;">$4.2M</p>
+                <p style="font-size:0.8125rem;color:#6B7280;margin-top:0.25rem;">Collected via forms</p>
+              </div>
+              <div style="width:1px;background:#E5E7EB;" aria-hidden="true"></div>
+              <div>
+                <p style="font-size:1.5rem;font-weight:800;color:#111827;line-height:1;">4.9 / 5</p>
+                <p style="font-size:0.8125rem;color:#6B7280;margin-top:0.25rem;">Average rating</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ── Right: product mockup ───────────── -->
+          <div style="flex:1;min-width:280px;">
+            <!--
+              WCAG 1.1.1 — Non-text Content:
+              The figure/img has a descriptive alt that
+              explains what is shown, not just "screenshot".
+              loading="lazy" is omitted here because this
+              is above-the-fold — eager load for LCP.
+              aspect-ratio set via .hero-mockup class to
+              prevent layout shift (CLS = 0).
+            -->
+            <figure style="margin:0;">
+              <div
+                class="hero-mockup"
+                role="img"
+                aria-label="FormFlow dashboard: a drag-and-drop form builder showing a payment form with name, email, and Stripe card fields, surrounded by analytics cards displaying submission counts and conversion rate"
+                style="
+                  background:#fff;
+                  border-radius:1rem;
+                  box-shadow:0 25px 60px rgba(79,70,229,0.15),0 8px 20px rgba(0,0,0,0.08);
+                  border:1px solid #E5E7EB;
+                  overflow:hidden;
+                  padding:1.5rem;
+                  display:flex;
+                  flex-direction:column;
+                  gap:1rem;
+                "
+              >
+                <!-- Mock browser chrome -->
+                <div style="display:flex;align-items:center;gap:0.5rem;">
+                  <span style="width:12px;height:12px;border-radius:50%;background:#FCA5A5;display:inline-block;" aria-hidden="true"></span>
+                  <span style="width:12px;height:12px;border-radius:50%;background:#FCD34D;display:inline-block;" aria-hidden="true"></span>
+                  <span style="width:12px;height:12px;border-radius:50%;background:#6EE7B7;display:inline-block;" aria-hidden="true"></span>
+                  <div style="flex:1;background:#F3F4F6;border-radius:4px;height:20px;margin-left:0.5rem;display:flex;align-items:center;padding:0 0.5rem;">
+                    <span style="font-size:0.6875rem;color:#9CA3AF;">formflow.app/embed/payment-form</span>
+                  </div>
+                </div>
+
+                <!-- Mock form body -->
+                <div style="background:#F9FAFB;border-radius:0.625rem;padding:1.25rem;flex:1;display:flex;flex-direction:column;gap:0.875rem;">
+                  <p style="font-size:0.8125rem;font-weight:700;color:#111827;margin:0;">Contact &amp; Payment</p>
+
+                  <!-- Mock form fields -->
+                  <div style="display:flex;flex-direction:column;gap:0.25rem;">
+                    <label style="font-size:0.6875rem;font-weight:600;color:#374151;">Full name</label>
+                    <div style="background:#fff;border:1.5px solid #D1D5DB;border-radius:0.375rem;height:32px;padding:0 0.625rem;display:flex;align-items:center;">
+                      <span style="font-size:0.75rem;color:#9CA3AF;">Sarah Johnson</span>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:0.25rem;">
+                    <label style="font-size:0.6875rem;font-weight:600;color:#374151;">Email address</label>
+                    <div style="background:#fff;border:1.5px solid #D1D5DB;border-radius:0.375rem;height:32px;padding:0 0.625rem;display:flex;align-items:center;">
+                      <span style="font-size:0.75rem;color:#9CA3AF;">sarah@example.com</span>
+                    </div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:0.25rem;">
+                    <label style="font-size:0.6875rem;font-weight:600;color:#374151;">Card details</label>
+                    <div style="background:#fff;border:1.5px solid #4F46E5;border-radius:0.375rem;height:32px;padding:0 0.625rem;display:flex;align-items:center;gap:0.5rem;">
+                      <svg width="24" height="16" viewBox="0 0 24 16" aria-hidden="true" focusable="false" fill="none">
+                        <rect width="24" height="16" rx="3" fill="#1A1F71"/>
+                        <rect x="1.5" y="5" width="21" height="3" fill="#F7B731"/>
+                      </svg>
+                      <span style="font-size:0.75rem;color:#111827;font-family:monospace;">•••• •••• •••• 4242</span>
+                    </div>
+                  </div>
+
+                  <!-- Mock submit button -->
+                  <div style="background:#4F46E5;border-radius:0.375rem;height:34px;display:flex;align-items:center;justify-content:center;margin-top:0.25rem;">
+                    <span style="font-size:0.8125rem;font-weight:600;color:#fff;">Pay $49.00</span>
+                  </div>
+                </div>
+
+                <!-- Mock analytics bar -->
+                <div style="display:flex;gap:0.75rem;">
+                  <div style="flex:1;background:#F0FDF4;border:1px solid #BBF7D0;border-radius:0.5rem;padding:0.625rem;text-align:center;">
+                    <p style="font-size:1rem;font-weight:700;color:#16A34A;margin:0;">312</p>
+                    <p style="font-size:0.625rem;color:#4B5563;margin:0;">Submissions</p>
+                  </div>
+                  <div style="flex:1;background:#EEF2FF;border:1px solid #C7D2FE;border-radius:0.5rem;padding:0.625rem;text-align:center;">
+                    <p style="font-size:1rem;font-weight:700;color:#4F46E5;margin:0;">68%</p>
+                    <p style="font-size:0.625rem;color:#4B5563;margin:0;">Conversion</p>
+                  </div>
+                  <div style="flex:1;background:#FFF7ED;border:1px solid #FED7AA;border-radius:0.5rem;padding:0.625rem;text-align:center;">
+                    <p style="font-size:1rem;font-weight:700;color:#EA580C;margin:0;">$4.2k</p>
+                    <p style="font-size:0.625rem;color:#4B5563;margin:0;">Collected</p>
+                  </div>
+                </div>
+
+              </div>
+              <figcaption class="sr-only">FormFlow's embedded payment form builder with live analytics</figcaption>
+            </figure>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF -->
+    <section id="testimonials" aria-labelledby="testimonials-heading">
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" aria-labelledby="features-heading">
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" aria-labelledby="pricing-heading">
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-heading">
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════
+       ARIA LANDMARK: contentinfo (site footer)
+  ═══════════════════════════════════════════════ -->
+  <footer id="site-footer" role="contentinfo" aria-label="Site footer">
+    <!-- Footer built last -->
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════
+       JAVASCRIPT — deferred, non-render-blocking
+       1. Nav sticky shadow on scroll
+       2. Mobile menu toggle (aria-expanded, hidden)
+       3. Close menu on Escape key (WCAG 2.1.1)
+       4. Trap focus not needed here (not modal dialog)
+  ═══════════════════════════════════════════════ -->
+  <script>
+    // ── Sticky nav shadow ───────────────────────
+    (function() {
+      var header = document.getElementById('site-header');
+      var handler = function() {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+      };
+      window.addEventListener('scroll', handler, { passive: true });
+    })();
+
+    // ── Mobile menu toggle ──────────────────────
+    var navToggle   = document.getElementById('nav-toggle');
+    var mobileMenu  = document.getElementById('mobile-menu');
+    var iconMenu    = document.getElementById('icon-menu');
+    var iconClose   = document.getElementById('icon-close');
+
+    function openMobileMenu() {
+      mobileMenu.hidden = false;
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.setAttribute('aria-label', 'Close navigation menu');
+      iconMenu.style.display  = 'none';
+      iconClose.style.display = 'block';
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.hidden = true;
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open navigation menu');
+      iconMenu.style.display  = 'block';
+      iconClose.style.display = 'none';
+    }
+
+    navToggle.addEventListener('click', function() {
+      mobileMenu.hidden ? openMobileMenu() : closeMobileMenu();
+    });
+
+    // Close on Escape (WCAG 2.1.1 Keyboard / 2.1.2 No Keyboard Trap)
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !mobileMenu.hidden) {
+        closeMobileMenu();
+        navToggle.focus(); // return focus to trigger
+      }
+    });
+
+    // Close menu when a nav link is clicked (smooth scroll handles the rest)
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  </script>
+
+</body>
+</html>
