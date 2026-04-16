@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — FormFlow
+  Submitted to Google Search Console and Bing Webmaster Tools.
+  Protocol: https://www.sitemaps.org/protocol.html
+
+  Priority scale:
+    1.0  — Homepage (most important)
+    0.8  — Core product/feature pages
+    0.6  — Supporting pages (blog, docs)
+    0.4  — Legal/company pages (low crawl value)
+
+  changefreq guidance:
+    "weekly"  — pages that update often (homepage, blog index)
+    "monthly" — stable pages (features, pricing)
+    "yearly"  — rarely-changing pages (legal)
+-->
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+
+  <!-- ── Homepage ─────────────────────────────── -->
+  <url>
+    <loc>https://formflow.app/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ── Core product pages ────────────────────── -->
+  <url>
+    <loc>https://formflow.app/features/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://formflow.app/pricing/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://formflow.app/accessibility/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://formflow.app/integrations/stripe/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Supporting pages ──────────────────────── -->
+  <url>
+    <loc>https://formflow.app/docs/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://formflow.app/blog/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://formflow.app/changelog/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ── Company pages ─────────────────────────── -->
+  <url>
+    <loc>https://formflow.app/about/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- ── Legal pages ───────────────────────────── -->
+  <url>
+    <loc>https://formflow.app/privacy/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://formflow.app/terms/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://formflow.app/cookies/</loc>
+    <lastmod>2026-04-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+</urlset>

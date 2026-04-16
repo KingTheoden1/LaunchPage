@@ -1,0 +1,51 @@
+# robots.txt — FormFlow
+# https://formflow.app/robots.txt
+# Protocol: https://www.robotstxt.org/robotstxt.html
+#
+# Rules:
+#   - All compliant crawlers may index the full site
+#   - Admin, API, and private paths are blocked
+#   - Sitemap location declared for all crawlers
+
+# ── Default: allow all crawlers ──────────────────
+User-agent: *
+Allow: /
+
+# Block admin and internal paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /dashboard/
+Disallow: /account/
+Disallow: /login/
+Disallow: /signup/
+Disallow: /_next/
+Disallow: /static/private/
+
+# Block query-string-only pages (duplicate content)
+Disallow: /*?*utm_source=
+Disallow: /*?*ref=
+
+# ── Sitemap location ─────────────────────────────
+Sitemap: https://formflow.app/sitemap.xml
+
+# ── Crawler-specific rules ────────────────────────
+
+# GPTBot (OpenAI) — block training data scraping
+User-agent: GPTBot
+Disallow: /
+
+# Google-Extended (Gemini training) — block
+User-agent: Google-Extended
+Disallow: /
+
+# CCBot (Common Crawl / AI training) — block
+User-agent: CCBot
+Disallow: /
+
+# anthropic-ai bot — block
+User-agent: anthropic-ai
+Disallow: /
+
+# Bytespider (TikTok/ByteDance) — block
+User-agent: Bytespider
+Disallow: /
